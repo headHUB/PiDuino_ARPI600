@@ -9,7 +9,7 @@
 
 #define EXTERNAL_NUM_INTERRUPTS     32
 #define NUM_DIGITAL_PINS            32
-#define NUM_ANALOG_INPUTS           0
+#define NUM_ANALOG_INPUTS           10
 
 #define analogInputToDigitalPin(p)  (-1)
 #define analogInPinToBit(p)         (p)

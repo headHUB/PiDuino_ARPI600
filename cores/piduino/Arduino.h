@@ -21,7 +21,8 @@
 
 #ifndef Arduino_h
 #define Arduino_h
-#include <tlc1543.h>
+
+#include "analogRead.h"
 
 #include "bcm2835_registers.h"
 #include <math.h>
@@ -130,6 +131,7 @@ void analogReference(uint8_t mode);
 //DIV = 19200000 / (FREQ * RANGE)
 uint32_t analogWriteSetup(uint32_t freq, uint32_t range);//returns the frequency achieved
 void analogWrite(uint8_t, uint16_t);//500ns direct register write takes 23ns rest is pin mode and channel enable
+unsigned int analogRead(unsigned char Channel);
 
 unsigned long pulseIn(uint8_t pin, uint8_t state, unsigned long timeout);
 
