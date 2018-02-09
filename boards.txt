@@ -1,6 +1,6 @@
 
 ##############################################################
-bplus.name=RaspberryPI B+/2
+bplus.name=RaspberryPI
 
 bplus.upload.tool=scp
 bplus.upload.verbose=
@@ -34,3 +34,40 @@ bplus.menu.GDBDebug.disabled.build.optimization_flags=-O3
 bplus.menu.GDBDebug.enabled=Enabled
 bplus.menu.GDBDebug.enabled.build.debug_flags=-g
 bplus.menu.GDBDebug.enabled.build.optimization_flags=
+
+
+##############################################################
+opione.name=Orange Pi One
+
+opione.upload.tool=scp
+opione.upload.verbose=
+opione.upload.speed=115200
+
+opione.build.mcu=opione
+//opione.build.f_cpu=700000000L
+opione.build.board=RASPI
+opione.build.core=piduino
+opione.build.variant=opione
+opione.build.debug_flags=
+opione.build.optimization_flags=-O3
+
+##############################################################
+menu.SerialDestination=Serial to Console
+opione.menu.SerialDestination.disabled=Disabled
+opione.menu.SerialDestination.disabled.build.extra_flags=-DRASPI
+opione.menu.SerialDestination.enabled=Enabled
+opione.menu.SerialDestination.enabled.build.extra_flags=-DRASPI -DSERIAL_TO_CONSOLE
+
+##############################################################
+# Add a menu entry called "Enable gdb" which is used to enable or disable support for the
+# GNU Debugger called "gdb".  Dependening on the settings that that user selects, we either
+# compile with or without the "-g" flag.  Adding the "-g" flag includes symbolic debugging.
+# The symbol "build.debug_flags" get set based on the value the user selects.
+#
+menu.GDBDebug=Enable gdb
+opione.menu.GDBDebug.disabled=Disabled
+opione.menu.GDBDebug.disabled.build.debug_flags=
+opione.menu.GDBDebug.disabled.build.optimization_flags=-O3
+opione.menu.GDBDebug.enabled=Enabled
+opione.menu.GDBDebug.enabled.build.debug_flags=-g
+opione.menu.GDBDebug.enabled.build.optimization_flags=d.optimization_flags=
