@@ -21,6 +21,7 @@
 
 #ifndef Arduino_h
 #define Arduino_h
+#include <tlc1543.h>
 
 #include "bcm2835_registers.h"
 #include <math.h>
@@ -123,7 +124,7 @@ int digitalRead(uint8_t);//110ns direct register read takes 74ns
 
 //those return nothing and are here for compatibility
 //ToDo: make them rewritable
-int analogRead(uint8_t pin);
+//int analogRead(uint8_t pin);
 void analogReference(uint8_t mode);
 
 //DIV = 19200000 / (FREQ * RANGE)
