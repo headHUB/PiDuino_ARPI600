@@ -23,11 +23,21 @@
 #define Arduino_h
 
 #include "analogRead.h"
-
 #include "bcm2835_registers.h"
 #include <math.h>
 #include <pthread.h>
 #include "pgmspace.h"
+
+#ifdef rpi3
+#include "pins_rpi3_arduino.h"
+#elif bplus
+#include "pins_bplus_arduino.h"
+#elif opione
+#include "pins_opione_arduino.h"
+#endif
+
+
+
 
 #ifdef __cplusplus
 extern "C"{
@@ -205,6 +215,5 @@ String shellExec(const char *cmd, int *result);
 
 #include "Console.h"
 #include "binary.h"
-#include "pins_arduino.h"
 
 #endif
